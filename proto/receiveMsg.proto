@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package grpcChat;
+
+option go_package="github.com/grpc-chat/proto";
+
+import "enums.proto";
+
+
+message ReceiveMsgsRequest {
+    string SenderID = 1;
+    MessageTypeEnum MessageType = 2;
+    string Message =3;
+    optional string RoomOrRecipientID = 4;
+}
+
+message ReceiveMsgsResponse {
+    MessageTypeEnum MessageType = 1;
+    string Message =2;
+    optional string RoomOrRecipientID = 3;
+    string SenderID = 4;
+}
+

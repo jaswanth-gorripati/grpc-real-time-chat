@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package grpcChat;
+
+option go_package="github.com/grpc-chat/proto";
+
+message AnonymousMsgRequest {
+    string Message = 1;
+}
+
+
+
+

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package grpcChat;
+
+option go_package = "github.com/grpc-chat/proto";
+
+enum MessageTypeEnum {
+  DIRECT = 0;
+  GROUP = 1;
+  ANONYMOUS = 2;
+}

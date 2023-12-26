@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package grpcChat;
+
+option go_package="github.com/grpc-chat/proto";
+
+message DirectMsgRequest {
+    string RecipientID = 1;
+    string Message = 2;
+}
+
+
+
+

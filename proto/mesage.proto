@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package grpcChat;
+
+option go_package="github.com/grpc-chat/proto";
+import "google/protobuf/empty.proto";
+
+import "anonymousMsg.proto";
+import "directMsg.proto";
+import "roomMsg.proto";
+
+import "receiveMsg.proto";
+
+service GrpcChat {
+    rpc SendAnonymousMsg(AnonymousMsgRequest) returns (google.protobuf.Empty);
+    rpc SendDirectMsg(DirectMsgRequest) returns (google.protobuf.Empty);
+    rpc SendGroupMsg(RoomMsgRequest) returns (google.protobuf.Empty);
+
+    rpc ReceiveAllMsgs(stream ReceiveMsgsRequest) returns(stream ReceiveMsgsResponse);
+
+}
+
+
+
+
